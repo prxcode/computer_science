@@ -1,5 +1,5 @@
-# F111CS
-Get F111CS Materials at one place
+# Computer Science
+Get Computer Science Materials at one place
 
 ## Notice
 

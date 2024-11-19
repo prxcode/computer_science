@@ -1,0 +1,16 @@
+1. Write a C program using function that takes a character indicating a color as
+an input argument and displays the full color if it is present else prints the
+message that the color is not present. Here function doesn&#39;t return anything.
+Rainbow colors:
+R O Y G B I V = Red Orange Yellow Green Blue Indigo Violet.
+
+2. Write a program that’s passes an integer number to a user defined function.
+The function prints all the factors of that number.
+
+3. Write a program that passes a number from main to a function. Function
+checks if it’s a magic number or no and prints an appropriate message
+Magic no
+145 =1!+4!+5!= 145
+
+4. Write a function to print no of digits in a number using recursion. Eg
+123=3digits

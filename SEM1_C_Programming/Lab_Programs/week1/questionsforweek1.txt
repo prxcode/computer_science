@@ -1,3 +1,5 @@
+Sequential Programming
+
 Q1. Write a C program to accept the marks obtained by a student in 5 courses and calculate the average and percentage. (Consider maximum marks in a course is 100).
 
 Q2. Write a C program that reads a temperature value in Fahrenheit from the user, converts it to Celsius using the formula celsius = (Fahrenheit - 32) * 5 / 9, and displays the converted temperature in Celsius

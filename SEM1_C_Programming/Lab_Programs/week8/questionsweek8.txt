@@ -1,3 +1,5 @@
+Functions-Recursion
+
 1. Write a C program using function that takes a character indicating a color as
 an input argument and displays the full color if it is present else prints the
 message that the color is not present. Here function doesn&#39;t return anything.

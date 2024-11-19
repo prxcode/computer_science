@@ -1,0 +1,69 @@
+Q1. Write a program to print the following pattern using iterative statements. Your
+program should ask the user for the pattern size. Use for loop.
+a.
+
+If user input is 5
+1
+2 2
+3 3 3
+4 4 4 4
+5 5 5 5 5
+
+If user input is 7
+1
+2 2
+3 3 3
+4 4 4 4
+5 5 5 5 5
+6 6 6 6 6 6
+7 7 7 7 7 7 7
+
+b.
+
+If user input is 5
+1
+2 1
+3 2 1
+4 3 2 1
+5 4 3 2 1
+
+If user input is 7
+1
+2 1
+3 2 1
+4 3 2 1
+5 4 3 2 1
+
+6 5 4 3 2 1
+7 6 5 4 3 2 1
+
+Q2. Write a program to enter marks of N students in M subjects and calculate
+average and print it using nested loop
+Eg. Enter No of students :5 // value of N
+Enter No of subjects :3 // value of M
+Outer Loop i will run from 1 to 5 (No of students)
+Inner Loop j will run from 1 to 3 (No of subjects)
+
+For 1st student Enter marks in 3 subjects: 50 80 90
+Percentage: 73.3
+..
+For 5th student Enter marks in 3 subjects: 60 50 80
+Percentage: 63.3
+
+Q3 Write a C program to print the all the prime numbers from 1 to n (user input):
+Eg. N=10
+Prime no 2
+Prime no 3
+Prime no 5
+Prime no 7
+
+Q4. Write a C program to print factors of all the numbers from 1 to n (user input)
+Eg. N=5
+Factors of 1 =1
+
+Factors of 2=1,2
+Factors of 3=1,3
+Factors of 4=1,2,4
+Factors of 5=1,5
+
+

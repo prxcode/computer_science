@@ -1,0 +1,21 @@
+Q1 Write a C program to read 5 subjects marks of a student and calculate his/her
+Total and Percentage using arrays. And print the result as following criteria
+Calculate percentage and grade according to following:
+
+Percentage &gt;= 90% : Grade A
+Percentage &gt;= 80% : Grade B
+Percentage &gt;= 70% : Grade C
+Percentage &gt;= 60% : Grade D
+Percentage &gt;= 40% : Grade E
+Percentage &lt; 40% : Grade F
+
+Q2. Write a C program to read two mark lists of equal size (10 size) and check
+whether they are identical or not.
+E.g.
+mark list 1 : 22 33 44 55 66
+mark list 2 : 22 33 44 55 66
+Output : Identical
+
+Q3. WAP to find the sum of all elements in an integer array.
+
+Q4. WAP to find the all the prime elements in an array.

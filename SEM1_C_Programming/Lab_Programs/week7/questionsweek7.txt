@@ -1,3 +1,5 @@
+Arrays (2D Arrays)
+
 Note:
 For all questions set the values for
 M and N using #define directive, at the beginning.

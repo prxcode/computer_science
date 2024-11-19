@@ -1,0 +1,75 @@
+Note:
+For all questions set the values for
+M and N using #define directive, at the beginning.
+----------------------------
+#include &lt;stdio.h&gt;
+#define M 3
+#define N 2
+
+
+Q1. Write a program to store the total salary of N employees in an array. For each
+employee calculate the total salary.
+
+
+Total salary = Basic salary + HRA allowance + Special allowance
+HRA allowance =40% of basic salary
+Special allowance = 25% of basic salary.
+The program then sorts the array in descending order. (highest salary to lowest salary)
+Eg. Enter No of employees :3 // value of N
+Enter basic salary for 1 st employee: 1000
+HRA allowance (calculated)= 400
+Special allowance (calculated) =250
+Total salary (calculated) = 1650
+
+Enter basic salary for 2 nd employee: 2000
+HRA allowance (calculated)= 800
+Special allowance (calculated) =500
+Total salary (calculated) = 3300
+
+
+Enter basic salary for 3 rd employee: 500
+HRA allowance (calculated)= 200
+Special allowance (calculated) =125
+Total salary (calculated) = 825
+
+And the sorts an array in descending order of total salary and prints the array elements.
+
+0     1   2
+3300 1650 325
+
+Q.2 Write a C program C Program to Find the Sum of each Row &amp; each Column of a MxN
+Matrix
+Eg. Row/M=3, Coulmn/N= 4
+1 2 0 3
+0 -1 3 4
+2 0 -1 -2
+Sum of row 1: 1+2+0+3 =6
+Sum of row 2: 0+ -1+ 3+ 4 =6
+Sum of row 3: 2+ 0+-1+ -2=-1
+Sum of column 1: 1+0 +2 =3
+Sum of column 2:2+ -1+ 0=1
+Sum of column 3:0+3+-1=2
+Sum of column 4:3+4+-2=5
+
+
+Q.3 C Program to check the matrix is square else print invalid. If it’s a square matrix print
+the Sum of the Main &amp; Opposite Diagonal Elements of a MxM Matrix.
+Eg. Row/M=3, Coulmn/N= 3 (Square Matrix only)
+1 2 0
+0 -1 3
+2 0 -1
+
+3
+
+Sum of main diagonal : 1 +-1+-1=-1
+Sum of opposite diagonal : 0+-1+2=1
+
+
+
+Q.4 Perform linear search in a MxN matrix, print all the occurrences of the key elements.
+Eg. Row/M=3, Coulmn/N= 4
+1 2 0 3
+0 -1 3 4
+2 0 -1 -2
+Element to be searched: -1
+Element is present at : [1][1] , [2][2] locations

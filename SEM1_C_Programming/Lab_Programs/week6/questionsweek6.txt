@@ -1,3 +1,5 @@
+Arrays (1D Arrays)
+
 Q1 Write a C program to read 5 subjects marks of a student and calculate his/her
 Total and Percentage using arrays. And print the result as following criteria
 Calculate percentage and grade according to following:

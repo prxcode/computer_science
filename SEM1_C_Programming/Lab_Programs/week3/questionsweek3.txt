@@ -1,4 +1,4 @@
-
+Switch case (selection programming)
     1. Write a program which takes a user input character value and prints if its vowel or consonant or any invalid alphabet using switch statement.
 
 Syntax

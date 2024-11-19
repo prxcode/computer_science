@@ -1,3 +1,5 @@
+Looping (Pattern Printing and 1D Array) 
+
 Q1. Write a program to print the following pattern using iterative statements. Your
 program should ask the user for the pattern size. Use for loop.
 a.

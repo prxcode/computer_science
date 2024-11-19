@@ -1,4 +1,4 @@
-
+Looping Statements (for,while,do while)
 1.Write program to check if a number is prime or not using for loop.
 
 2.Write a program to find if a number is a magic number using do while loop

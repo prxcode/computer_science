@@ -1,0 +1,54 @@
+Strings
+
+(Suggestion for compiling and running your program efficiently and saving time)
+Follow this suggestion:
+Keep separate executable file for each program using the -o option. (no need to use
+the default a.out file)
+1. compile once any source program (assume no errors).
+2. create the executable file for this program. This executable file can have the
+same primary name of your program (without any extension).
+3. Demonstrate using this executable file.
+Example:
+$ vi sample.c
+$ cc -o sample sample.c
+$ ./sample
+
+Note: Here the primary name is sample, while demonstrating to us, use the
+corresponding executable file for each program. (no need to compile frequently.
+You can directly run the executable program. You save time).
+If you are using #include &lt;math.h&gt;; in your program, then, the compilation,
+linking and execution steps will be like this:
+$cc -o sample -lm sample.c
+$./sample
+
+String and string functions
+strcpy(src, dest), strcmp(src, dest), strcat(src, dest), strlen(str)
+
+Q.1 Write a C program to accept first name, middle name and last name from
+user, store them in 3 different character arrays. Concatenate these 3 strings in one
+and print as full name.
+
+Test case
+char first[20], char middle[20], char last[20];
+gets(first); similarly take input for middle and last
+strcat(first,middle); // first= first+middle, similarly do for last
+
+Q.2 Write a C Program to get two string inputs from the user. Compare the two
+strings using string function and print strings are equal or not.
+Test Case
+Input 2 strings using gets(S1);
+Int difference=strcmp(S1,S2);
+If difference =0 then Strings are same
+Else If difference &gt;0 then S1 is bigger than S2
+Else If difference &lt;0 then S2 is bigger than S1
+
+Q.3 Write a C program to accept a string from the user and count the number
+of vowels and consonants in it.
+Test case
+char s[]=“Computer lab”
+if(s[i]==’a’|| s[i]==’A’…….s[i]==’u’|| s[i]==’U’)
+vowel++;
+else
+consonant++;
+Vowels : o, u, e, a = 4
+Consonants: C, m, p, t, r, l, b = 7

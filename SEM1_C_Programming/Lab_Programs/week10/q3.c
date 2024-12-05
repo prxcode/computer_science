@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>  // For malloc() and free()
 
 // Function to sort the array using Selection Sort
 void sort(int a[], int len) {
@@ -30,13 +29,7 @@ int main() {
     printf("Enter the number of elements in the array: ");
     scanf("%d", &len);
     
-    // Dynamically allocate memory for the array using malloc
-    int *a = (int*)malloc(len * sizeof(int)); // Allocate memory for 'len' integers
-
-    if (a == NULL) {
-        printf("Memory allocation failed!\n");
-        return 1;  // Exit the program if memory allocation fails
-    }
+    int a[len];  // Use a static array of size 'len'
 
     // Input the elements of the array
     printf("Enter the elements of the array: ");
@@ -53,9 +46,6 @@ int main() {
         printf("%d ", a[i]);
     }
     printf("\n");
-
-    // Free the dynamically allocated memory
-    free(a);
 
     return 0;
 }

@@ -1,42 +1,29 @@
 import java.util.Scanner;
 
 class Student {
-    private String name;
-    private double score1, score2, score3;
+	static void Details(){
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter your name: ");
+		String name = sc.nextLine();
 
-    // Procedure to enter student's name and scores
-    public void inputDetails() {
-        Scanner sc = new Scanner(System.in);
+		System.out.print("Enter score for exam 1: ");
+		float e1 = sc.nextInt();
+	
+		System.out.print("Enter score for exam 2: ");
+		float e2 = sc.nextInt();
+		
+		System.out.print("Enter score for exam 3: ");
+		float e3 = sc.nextInt();
+	
+		float finalmean = ((e1+e2+e3)/3);
+		System.out.println("Student: "+ name);
+		System.out.println("Average score: "+ finalmean);
 
-        System.out.print("Enter student's name: ");
-        name = sc.nextLine();
-
-        System.out.print("Enter score for exam 1: ");
-        score1 = sc.nextDouble();
-
-        System.out.print("Enter score for exam 2: ");
-        score2 = sc.nextDouble();
-
-        System.out.print("Enter score for exam 3: ");
-        score3 = sc.nextDouble();
-    }
-
-    // Procedure to compute mean score
-    public double computeMean() {
-        return (score1 + score2 + score3) / 3.0;
-    }
-
-    // Procedure to display student's name and mean score
-    public void displayDetails() {
-        System.out.println("\nStudent: " + name);
-        System.out.printf("Average score: %.2f\n", computeMean());
-    }
+	}
 }
 
-public class Main {
-    public static void main(String[] args) {
-        Student s = new Student();
-        s.inputDetails();
-        s.displayDetails();
-    }
+public class q1{
+	public static void main(String args[]){
+		Student.Details();
+	}
 }

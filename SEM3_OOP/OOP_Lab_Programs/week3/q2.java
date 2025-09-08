@@ -27,6 +27,22 @@ class BankAccount{
 		else {
 			System.out.println("Insufficient balance.");
 		}
+		
+		System.out.println("Account: "+accountNumber+", Balance: "+balance);
+		
+		System.out.print("Enter withdrawl amount: ");
+		withdraw = sc.nextDouble();
+
+		if (withdraw <= balance){
+			System.out.println("Withdrawl Successful.");
+			balance = (balance-withdraw);
+		}
+		
+		else {
+			System.out.println("Insufficient balance.");
+		}
+
+		System.out.println("Account: "+accountNumber+", Balance: "+ balance);
 
 		sc.close();
 

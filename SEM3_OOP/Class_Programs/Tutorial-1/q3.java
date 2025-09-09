@@ -6,4 +6,5 @@ public class Test {
   }
 }
 
-// Ans. b) Compilation error
+// Ans. b) Compilation error because "final" is used as keyword so i can't be updated!
+// If final is removed the answer is 101

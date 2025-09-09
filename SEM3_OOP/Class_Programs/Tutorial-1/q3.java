@@ -1,4 +1,4 @@
-public class Test {
+public class q3 {
   public static final int max = 100;
     public static void main(String[] args) {
     max++;

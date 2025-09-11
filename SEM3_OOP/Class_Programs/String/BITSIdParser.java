@@ -85,6 +85,9 @@ public class BITSIdParser {
             case "B5":
                 discipline = "Chemistry";
                 break;
+            case "AD":
+                discipline = "Maths and Computing";
+                break;
             default:
                 discipline = "Unknown";
         }

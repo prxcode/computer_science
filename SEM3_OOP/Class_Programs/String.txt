@@ -1,0 +1,6 @@
+//String processing is essential requirement in many application and java String class provides a wealth of functions.
+
+String x = "abcdef123"
+int len = x.length();
+char a = x.charAt(3);
+String s1 = x.subString(3,6); // 3 is the begining of index ad 6 is the end

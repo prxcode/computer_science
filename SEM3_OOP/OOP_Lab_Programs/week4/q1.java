@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class Account {
     // Attributes
     private String id;
@@ -66,34 +68,72 @@ class Account {
 
 public class Tester {
     public static void main(String[] args) {
-        // Create two accounts
+        Scanner sc = new Scanner(System.in);
+
+        // Create accounts
         Account acc1 = new Account("A001", "Alice", 5000);
         Account acc2 = new Account("A002", "Bob", 2000);
 
-        // Print initial details
-        System.out.println("Initial Accounts:");
-        System.out.println(acc1);
-        System.out.println(acc2);
+        int choice;
+        do {
+            System.out.println("\n=== BANK MENU ===");
+            System.out.println("1. Show Accounts");
+            System.out.println("2. Credit");
+            System.out.println("3. Debit");
+            System.out.println("4. Transfer");
+            System.out.println("5. Exit");
+            System.out.print("Enter your choice: ");
+            choice = sc.nextInt();
 
-        // Test credit
-        System.out.println("\nCrediting 1000 to Alice:");
-        acc1.credit(1000);
-        System.out.println(acc1);
+            switch (choice) {
+                case 1:
+                    System.out.println("\n--- Account Details ---");
+                    System.out.println(acc1);
+                    System.out.println(acc2);
+                    break;
 
-        // Test debit
-        System.out.println("\nDebiting 500 from Bob:");
-        acc2.debit(500);
-        System.out.println(acc2);
+                case 2:
+                    System.out.print("\nEnter account ID (A001/A002): ");
+                    String cid = sc.next();
+                    System.out.print("Enter amount to credit: ");
+                    int camt = sc.nextInt();
+                    if (cid.equals("A001")) acc1.credit(camt);
+                    else if (cid.equals("A002")) acc2.credit(camt);
+                    else System.out.println("Invalid Account ID!");
+                    break;
 
-        // Test transfer
-        System.out.println("\nAlice transfers 2000 to Bob:");
-        acc1.transferTo(acc2, 2000);
-        System.out.println(acc1);
-        System.out.println(acc2);
+                case 3:
+                    System.out.print("\nEnter account ID (A001/A002): ");
+                    String did = sc.next();
+                    System.out.print("Enter amount to debit: ");
+                    int damt = sc.nextInt();
+                    if (did.equals("A001")) acc1.debit(damt);
+                    else if (did.equals("A002")) acc2.debit(damt);
+                    else System.out.println("Invalid Account ID!");
+                    break;
 
-        // Test invalid debit
-        System.out.println("\nTrying to debit 10000 from Bob:");
-        acc2.debit(10000);
-        System.out.println(acc2);
+                case 4:
+                    System.out.print("\nEnter source account ID (A001/A002): ");
+                    String sid = sc.next();
+                    System.out.print("Enter destination account ID (A001/A002): ");
+                    String did2 = sc.next();
+                    System.out.print("Enter amount to transfer: ");
+                    int tamt = sc.nextInt();
+                    if (sid.equals("A001") && did2.equals("A002")) acc1.transferTo(acc2, tamt);
+                    else if (sid.equals("A002") && did2.equals("A001")) acc2.transferTo(acc1, tamt);
+                    else System.out.println("Invalid account IDs!");
+                    break;
+
+                case 5:
+                    System.out.println("\nExiting... Thank you!");
+                    break;
+
+                default:
+                    System.out.println("Invalid choice! Try again.");
+            }
+
+        } while (choice != 5);
+
+        sc.close();
     }
 }

@@ -80,9 +80,9 @@ public class P1 {
                     String cid = sc.next();
                     System.out.print("Enter amount to credit= ");
                     int camt = sc.nextInt();
-                    if (cid == "A001") {   // using ==
+                    if (cid.equals("A001")) {
                         acc1.credit(camt);
-                    } else if (cid == "A002") {
+                    } else if (cid.equals("A002")) {
                         acc2.credit(camt);
                     } else {
                         System.out.println("Invalid Account ID!");
@@ -94,9 +94,9 @@ public class P1 {
                     String did = sc.next();
                     System.out.print("Enter amount to debit= ");
                     int damt = sc.nextInt();
-                    if (did == "A001") {
+                    if (did.equals("A001")) {
                         acc1.debit(damt);
-                    } else if (did == "A002") {
+                    } else if (did.equals("A002")) {
                         acc2.debit(damt);
                     } else {
                         System.out.println("Invalid Account ID!");
@@ -110,9 +110,9 @@ public class P1 {
                     String did2 = sc.next();
                     System.out.print("Enter amount to transfer= ");
                     int tamt = sc.nextInt();
-                    if (sid == "A001" && did2 == "A002") {
+                    if (sid.equals("A001") && did2.equals("A002")) {
                         acc1.transferTo(acc2, tamt);
-                    } else if (sid == "A002" && did2 == "A001") {
+                    } else if (sid.equals("A002") && did2.equals("A001")) {
                         acc2.transferTo(acc1, tamt);
                     } else {
                         System.out.println("Invalid account IDs!");

@@ -5,3 +5,5 @@ class q5{
           System.out.print((i + j) + " ");
   }
 }
+
+//Ans: a) 10 printed five times

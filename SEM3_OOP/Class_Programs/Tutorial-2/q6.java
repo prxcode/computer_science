@@ -7,6 +7,8 @@ class q6{
     case 'b': System.out.println("ball");
     case 'c': System.out.println("cat");
   }
+  }
+}
 
 // Ans: a) ball
       

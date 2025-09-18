@@ -1,4 +1,4 @@
-class Example_3 {
+class Sumofarray {
   public static void main(String args[]) {
     int arr[] = {3, 1, 2, 5, 4};
     sum(arr);

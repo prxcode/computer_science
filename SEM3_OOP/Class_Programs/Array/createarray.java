@@ -2,7 +2,7 @@
 // Setter = Mutator
 // Public > Protected > Default > Private 
 
-public class ArrayDemo {
+public class createarray {
     public static void main(String[] args) {
         int[] anArray; // Declare the array
 

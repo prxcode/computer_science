@@ -3,7 +3,7 @@ class A {
     A() {
       x = 20;
 } }
-public class Test {
+public class q1 {
     public static void main(String[] args) {
         A obj = new A();
         System.out.println(obj.x);

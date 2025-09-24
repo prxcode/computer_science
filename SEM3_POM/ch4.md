@@ -84,3 +84,8 @@ Divides work to be done into specific jobs and departments.
 - One employee reports to two bosses. It can create confusion, one boss may see one things, the other says something different.
 - It usually in matrix organizations where employees work on multiple projects.
 - Ex: An engineer works on a project, so they report to the Project Manager, but they also have a technical boss, the Engineering Manager.
+
+#### Work Specialization
+- Work specialization is breaking down jobs into smaller parts so that each worker does only one specific task.
+- Ex: In a car factory, one person install tires, another install engine and another paints the car.
+- Everyone does only one job repeatedly, which they become very skilled at.

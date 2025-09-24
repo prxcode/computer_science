@@ -1,13 +1,40 @@
 # Ch4 Organizational Structure
 
 #### Organizational Structure
-To know the purpose of organization structure and identify basic patterns of **departmentalization.**
-- Formal and Informal Organization
-- What is organizing?
-- Departmentalization
-- Span of control
-- Decentralized and Centralized 
-- Various types of organizational designs
+- It shows how work is divided, who reports to whom, and how different parts of a company are connected.
+- To know the purpose of organization structure and identify basic patterns of **departmentalization.**
+#### Formal and Informal Organization
+##### Formal
+Official structure shown on paper - roles, rules, and reporting lines.
+##### Informal
+Unofficial relationships and friendships that form naturally at work.
+
+#### What is organizing?
+It means arranging people and resources to work together to achieve goals.
+
+#### Departmentalization
+It means grouping jobs or people based on:
+- Function (e.g., Marketing, Finance)
+- Product (e.g., Electronics, Furniture)
+- Location (e.g., North Zone, South Zone)
+- Customer (e.g., Retail, Corporate)
+
+#### Span of control
+It tells how many people one manager can supervise directly.
+- **Wide span** = Many employees under one manager
+- **Narrow span** = Few employees under one manager
+
+#### Decentralized and Centralized 
+- **Centralized**: Top managers make most decisions.
+- **Decentralized**: Lower-level managers also make decisions.
+
+#### Types of Organizational Designs
+Some common designs are:
+- **Line Structure**: Simple, direct chain of command
+- **Line and Staff**: Line managers + support from staff experts
+- **Matrix**: Employees report to two bosses (e.g., Project + Department Manager)
+- **Team-based**: Work done in flexible teams
+- **Project-based**: Structure based on specific projects
 
 #### Elements of Organizational Design
 - **Organizing:** Managment function that involves arranging and structuring work to accomplish the organization's goals.
@@ -39,3 +66,21 @@ Divides work to be done into specific jobs and departments.
 - Clusters jobs into units.
 - Establishes relationship among individuals, groups, and departments. Establishes formal lines of authority.
 - Allocates and deploys organizational resources.
+
+
+#### Unity of Command Vs Chain of Command
+##### Unity of Command
+- Each employee should get orders from only one boss.
+- It avoids confusion, makes it clear who to listen to, and help employees word better and faster.
+- Ex: If you're working in the sales department, you should report **only to the Sales Manager**, not to anyone else.
+
+##### Chain of Command
+- It's the line of authority in a company, who reports to whom.
+- Structure is like a ladder or tree, from top managers to junior staff.
+- It keeps organization organized, everyone knows their role and boss.
+- Ex: Employee → Team Leader → Manager → Director → CEO
+
+###### Dual chain of Command
+- One employee reports to two bosses. It can create confusion, one boss may see one things, the other says something different.
+- It usually in matrix organizations where employees work on multiple projects.
+- Ex: An engineer works on a project, so they report to the Project Manager, but they also have a technical boss, the Engineering Manager.

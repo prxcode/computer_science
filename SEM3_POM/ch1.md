@@ -2,7 +2,25 @@
 
 PASTEL: Political, Economic, Social, Technological, Environmental, Legal
 
-#### Functions of Management
+#### Manager
+Someone who coordinates and overseas the work of other people.
+##### Types of Mangers
+1. Top Mangers(Supervisor)
+2. Middle (Work of first line)
+3. First line (Organizational decisions)
+4. Non-managerial employees
+
+Mangers work in organizations
+
+#### Characteristics of Organization
+- Distinct purpose
+- Deliberate Structure
+- People
+
+**Efficiency:** means of getting things done.
+**Effectiveness:** ends/attainment of goals.
+
+##### 4 Functions of Management
 Management involves coordinating activities to achieve organizational goals efficiently and effectively. The **four core functions** are:
 
 **1. Planning**
@@ -26,7 +44,8 @@ Management involves coordinating activities to achieve organizational goals effi
 - Example: Reviewing monthly sales reports and adjusting targets.
 
 #### 10 Roles of a Manager (Mintzberg’s Managerial Roles)
-Managers wear many hats. According to Henry Mintzberg, managerial roles fall into **three categories**:
+
+**Roles:** Specific actions/behaviours exhibited by a manager. Managers wear many hats. According to Henry Mintzberg, managerial roles fall into **three categories**:
 
 **1. Interpersonal Roles (Managing relationships):**
 - **Figurehead**: Performs ceremonial duties (e.g., attending official events).
@@ -45,13 +64,13 @@ Managers wear many hats. According to Henry Mintzberg, managerial roles fall int
 - **Negotiator**: Participates in discussions and agreements (e.g., contracts, partnerships).
 
   
-#### Different Managerial Levels
+#### Katz's 3 essential managerial skills
 1. Top Managers: Conceptual > Interpersonal > Technical
 2. Middle Managers: Conceptual = Interpersonal = Technical
 3. Low Level Managers: Conceptual < Interpersonal < Technical
+However, Human skills is required for all.
 
-  
-#### Managerial Challenges – Today and in the Future
+#### Managerial Challenge
 Modern managers face several ongoing and emerging challenges:
 
 **1. Focus on Technology**

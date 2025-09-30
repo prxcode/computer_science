@@ -1,4 +1,4 @@
-public class CopyTest {
+public class q3 {
   int x;
     CopyTest(int i) { x = i; }
     CopyTest(CopyTest ct) { x = ct.x; }

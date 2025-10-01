@@ -1,3 +1,5 @@
+# Ch4 Organizational Structure
+
 #### Organizational Structure
 - It shows how work is divided, who reports to whom, and how different parts of a company are connected.
 - To know the purpose of organization structure and identify basic patterns of **departmentalization.**

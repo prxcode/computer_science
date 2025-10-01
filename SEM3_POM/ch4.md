@@ -89,6 +89,7 @@ The basis by which jobs are grouped together. The five common forms of Departmen
 		2. Sales Director, Southern Region
 		3. Sales Director, Midwestern Region
 		4. Sales Director, Eastern Region
+
 3. **Product Departmentalization** - Groups jobs according to product line
 	1. Bombardier Ltd
 		1. Mass Transit Sector
@@ -110,6 +111,7 @@ The basis by which jobs are grouped together. The five common forms of Departmen
 		4. Lacquering and sanding Department Manager
 		5. Finishing Department Manager
 		6. Inspection and Shipping Department Manager
+		
 5. **Customer Departmentalization** - Groups jobs on the basis of specific and unique customers who have common needs.
 	1. Director of Sales
 		1. Manager, Retail Accounts
@@ -119,7 +121,6 @@ The basis by which jobs are grouped together. The five common forms of Departmen
 Two trends are:
 - **Cross-Functional Teams:** A work team composed of individuals from various functional specialties. This has become more popular as tasks become more complex.
 - **Customer Departmentalization:** Emphasizes monitoring and responding to customer's needs.
-		
 
 
 #### Unity of Command Vs Chain of Command
@@ -170,3 +171,45 @@ How standardized an organizations's jobs are and the extend to which employee be
 
 2. **Organic Organization:** An organization design that's highly adaptive and flexible.
 - Cross functional teams, free flow, wide spans, decentralization, low formalization
+
+
+#### Strategy and Structure 
+- **Strategy:** It is an organization's plan of action designed to achieve long term goals and objectives.
+- **Structure:** It refers to the way an organization is arranged, it can have departments, communication flows, division of work.
+- An organization’s structure should facilitate goal achievement. Because goals are an important part of the organization’s strategies, it’s only logical that strategy and structure are closely linked.
+
+
+#### Size and Structure 
+- **Strategy:** It refers to how large or small an organization is, it can be number of employees, scale of operations, revenue or assets, number of departments.
+- There’s considerable evidence that an organization’s size affects its structure, but once an organization grows past a certain size, size has less influence on structure.
+
+#### Technology and Structure
+- **Unit Production:** The production of items in units or small batches.
+- **Mass Production:** The production of items in large batches.
+- **Process Production:** The production of items in continuous processes.
+
+#### Environmental Uncertainty and Strucuture
+In stable and simple environments, mechanistic designs can be more effective. The greater uncertainty, the more an organization needs the flexibility of an organic design.
+
+#### Traditional Organizational Design Options
+- **Simple Structure:** An organization design with little departmentalized, wide spans of control, centralized authority, and little formation.
+- **Functional Structure:** An organizational design that groups together similar or related occupational specialities.
+- **Divisional Structure:** An organizational structure made up of seperate, semiautonomous units or divisions.
+
+#### Team Structure
+An organizational structure in which the entire organization is made up of work teams.
+
+#### Matrix and Project Structures
+- **Matrix Structure:** An organizational  structure that assigns specialists from different functional departments to work on one or more projects.
+- **Project Structure:** An organizational structure in which employees continuously work on projects.
+- Example: 
+	- R&D
+	- Marketing
+	- Customer Service
+	- Human Resource
+	- Finance
+	- Information Systems
+
+
+#### The Virtual Organizational 
+An organization that consists of small core of full-time employees and outside specialists temporarily hired as needed to work on projects, Sometimes called "Network" or "Modular" organization.

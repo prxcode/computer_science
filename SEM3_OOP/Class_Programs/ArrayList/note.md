@@ -27,9 +27,15 @@ public class Test{
     arrL.add(1); // adding elements
     arrL.add(2);
     System.out.println(arrL); // display will be in list [1,2]
+    System.out.println(arrL.size()); // display the size of list
+    System.out.println(arrL.sort()); // display the sorted list in A -> Z order
     System.out.println(arrL.get(0)); // display element add 0th index which is 1
     
     }
 }
 
   ```
+- ArrayList```ArrayList arrL = new ArrayList();```
+- ArrayList Collection```ArrayList arrL = new ArrayList(c);```
+- ArrayList Size```ArrayList arrL = new ArrayList(N);```
+

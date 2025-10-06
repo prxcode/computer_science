@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 
-class q1{
+class UsernameEncryptor{
         static void userpass(){
         System.out.print("Enter username: ");
         Scanner sc = new Scanner(System.in);
@@ -15,7 +15,7 @@ class q1{
 }
 
         public static void main(String args[]){
-                q1.userpass();
+                UsernameEncryptor.userpass();
 
         }
 }

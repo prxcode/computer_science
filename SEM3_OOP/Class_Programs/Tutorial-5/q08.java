@@ -1,5 +1,5 @@
 import java.util.LinkedList;
-public class q8 {
+public class q08 {
     public static void main(String[] args) {
 LinkedList<Integer> list = new LinkedList<>(); 
 list.add(1);

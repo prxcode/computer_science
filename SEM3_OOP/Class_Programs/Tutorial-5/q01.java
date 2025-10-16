@@ -1,4 +1,4 @@
-public class q1 {
+public class q01 {
     public static void main(String[] args) {
     StringBuffer sb = new StringBuffer("abc"); sb.reverse();
     sb.append("123");

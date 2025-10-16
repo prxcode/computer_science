@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class StudentNameProcessor {
+public class q16 {
 
     public static List<String> processStudentNames(String input) {
         Set<String> nameSet = new HashSet<>();

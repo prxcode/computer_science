@@ -1,5 +1,5 @@
 import java.util.*;
-public class Test9 {
+public class q9 {
     public static void main(String[] args) {
 ArrayList<String> list = new ArrayList<>(Arrays.asList("A", "B", "C", "D")); Iterator<String> it = list.iterator();
 while (it.hasNext()) {

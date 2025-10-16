@@ -1,5 +1,5 @@
 import java.util.StringTokenizer;
-public class q4 {
+public class q04 {
     public static void main(String[] args) {
     StringTokenizer st = new StringTokenizer("Hello World from Java"); 
       while (st.hasMoreTokens()) {

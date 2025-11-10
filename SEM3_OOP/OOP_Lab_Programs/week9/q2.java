@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class BankAccount {
     String accountHolder;
     double balance;
@@ -30,7 +32,14 @@ class SavingsAccount extends BankAccount {
 
 public class q2 {
     public static void main(String[] args) {
-        SavingsAccount account = new SavingsAccount("Arjun Mehta", 15000.0, 4.5);
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter account holder name: ");
+        String name = sc.nextLine();
+        System.out.print("Enter balance: ");
+        double balance = sc.nextDouble();
+        System.out.print("Enter interest rate: ");
+        double rate = sc.nextDouble();
+        SavingsAccount account = new SavingsAccount(name, balance, rate);
         account.displayAccountInfo();
     }
 }

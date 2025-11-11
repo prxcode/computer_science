@@ -225,3 +225,104 @@ Arrays.sort(array);
 | sort()         | Method           | Sort elements                  |
 
 ---
+
+
+
+## Inner Class
+
+#### Type 2
+```java
+public class MethodLocalInnerClass {
+    int num = 20;
+
+    public void Demo() {
+        class InnerClass {
+            public void display() {
+                System.out.println("Hello from inner class");
+                System.out.println("Number: " + num);
+            }
+        }
+
+        InnerClass inner = new InnerClass();
+        inner.display();
+    }
+
+    public static void main(String[] args) {
+        MethodLocalInnerClass obj = new MethodLocalInnerClass();
+        obj.Demo();
+    }
+}
+```
+
+## Anonymous Class
+
+```java
+class AnonymousInner {
+    public void my_method() {
+        System.out.println("Inside AnonymousInner class method");
+    }
+}
+
+public class TestAnonymousInner {
+    public static void main(String[] args) {
+
+        AnonymousInner a_inner = new AnonymousInner() {
+            @Override
+            public void my_method() {
+                System.out.println("Inside anonymous class method");
+            }
+        }; // ENDS with a SEMICOLON
+
+        a_inner.my_method();
+    }
+}
+```
+
+```java
+abstract class AnonymousClassEx {
+    public abstract void display();
+}
+
+public class OutClass {
+    public static void main(String[] args) {
+        AnonymousClassEx inclass = new AnonymousClassEx() {
+            @Override
+            public void display() {
+                System.out.println("Hello");
+            }
+        }; // ENDS WITH SEMICOLON
+        inclass.display();
+    }
+}
+
+```
+Static inner class is a nested classm it does not have access to outer class and instantaenous
+
+```java
+class MyOuter{
+    Static class NestedDemo{
+    }
+}
+```
+| **Type of Inner Class**      | **Where It’s Defined**                     | **Can Have static members?** | **Can Access Outer Class Members?**  | **When to Use**                                          | **Example (Short)**                                                                                                                                                                                               |
+| ---------------------------- | ------------------------------------------ | ---------------------------- | ------------------------------------ | -------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **1. Member Inner Class**    | Inside a class, but **outside methods**    | ❌ (only constants)           | ✅ Yes, even private ones             | When an inner class logically belongs to the outer class | `java\nclass Outer {\n  class Inner {\n    void msg() { System.out.println("Inner"); }\n  }\n}\n`                                                                                                                 |
+| **2. Static Nested Class**   | Inside a class, declared with `static`     | ✅                            | ❌ Only static members of outer class | When you don’t need access to outer instance             | `java\nclass Outer {\n  static class Inner {\n    void msg() { System.out.println("Static Inner"); }\n  }\n}\n`                                                                                                   |
+| **3. Local Inner Class**     | Inside a **method or block**               | ❌                            | ✅ Yes                                | When you need a helper class only within a single method | `java\nclass Outer {\n  void display() {\n    class Inner {\n      void msg() { System.out.println("Local Inner"); }\n    }\n    new Inner().msg();\n  }\n}\n`                                                    |
+| **4. Anonymous Inner Class** | Inside a method or expression; **no name** | ❌                            | ✅ Yes                                | When you need to override or implement something quickly | `java\ninterface A { void show(); }\nclass Test {\n  public static void main(String[] a){\n    A obj = new A(){\n      public void show(){ System.out.println("Anonymous"); }\n    };\n    obj.show();\n  }\n}\n` |
+
+
+## Lambda Expression (->)
+
+```java
+interface Phone {
+    void show();
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Phone p = () -> System.out.println("Hello!");  
+        p.show();
+    }
+}
+```

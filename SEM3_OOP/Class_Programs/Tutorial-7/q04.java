@@ -18,4 +18,4 @@ f.teach(); }
 }
 }
 
-// Ans. B) Compilation Error Class not found!
+// Ans. A) Faculty at OpenAi University

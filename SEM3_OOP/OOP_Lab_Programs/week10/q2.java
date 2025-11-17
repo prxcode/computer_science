@@ -1,31 +1,33 @@
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
+import java.util.Scanner;
 
 class Book implements Comparable<Book> {
     private String title;
     private String author;
     private double price;
-
-
+    
+ 
     public Book(String title, String author, double price) {
         this.title = title;
         this.author = author;
         this.price = price;
     }
-
+    
+ 
     public String getTitle() {
         return title;
     }
-
+    
     public String getAuthor() {
         return author;
     }
-
+    
     public double getPrice() {
         return price;
     }
-
+    
+   
     @Override
     public int compareTo(Book other) {
         if (this.price < other.price) {
@@ -36,7 +38,7 @@ class Book implements Comparable<Book> {
             return 0;
         }
     }
-
+    
     @Override
     public String toString() {
         return "Title: " + title + " Author: " + author + " Price: " + price;
@@ -46,17 +48,39 @@ class Book implements Comparable<Book> {
 
 public class q2 {
     public static void main(String[] args) {
-        List<Book> books = new ArrayList<>();
-        books.add(new Book("Java Basics", "John Doe", 350.0));
-        books.add(new Book("Data Structures", "Smith", 450.0));
-        books.add(new Book("Advanced Java", "Jane", 550.0));
-
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<Book> books = new ArrayList<>();
+        
+        System.out.print("How many books do you want to enter? ");
+        int numBooks = scanner.nextInt();
+        scanner.nextLine(); 
+ 
+        for (int i = 1; i <= numBooks; i++) {
+            System.out.println("
+Enter details for Book " + i + ":");
+            
+            System.out.print("Enter title: ");
+            String title = scanner.nextLine();
+            
+            System.out.print("Enter author: ");
+            String author = scanner.nextLine();
+            
+            System.out.print("Enter price: ");
+            double price = scanner.nextDouble();
+            scanner.nextLine(); 
+            
+           
+            books.add(new Book(title, author, price));
+        }
+       
         Collections.sort(books);
-
-
-        System.out.println("Books sorted by price (ascending):");
+    
+        System.out.println("
+Books sorted by price (ascending):");
         for (Book book : books) {
             System.out.println(book);
         }
+        
+        scanner.close();
     }
 }

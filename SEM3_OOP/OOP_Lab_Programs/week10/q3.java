@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -14,9 +15,15 @@ class Employee {
         this.age = age;
     }
 
-    public int getId() { return id; }
-    public String getName() { return name; }
-    public int getAge() { return age; }
+    public int getId() { 
+	return id; 
+	}
+    public String getName() { 
+	return name; 
+	}
+    public int getAge() { 
+	return age; 
+	}
 
     @Override
     public String toString() {
@@ -38,7 +45,7 @@ class AgeComparator implements Comparator<Employee> {
     }
 }
 
-public class EmployeeSorter {
+public class q3 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         ArrayList<Employee> employees = new ArrayList<>();

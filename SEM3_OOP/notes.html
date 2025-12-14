@@ -1,0 +1,753 @@
+<!-- Run this: `python3 -m http.server 8080` -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GNU nano — Exam Notes</title>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet"/>
+
+<style>
+body {
+    background-color: #1e1e1e;
+    font-family: "Ubuntu Mono", monospace;
+    margin: 0;
+    padding: 20px;
+}
+
+/* TERMINAL WINDOW */
+.terminal {
+    max-width: 1100px;
+    margin: auto;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(0,0,0,0.7);
+}
+
+/*   TOP UBUNTU HEADER */
+.top-bar {
+    background: linear-gradient(to bottom, #3c3c3c, #2f2f2f);
+    height: 36px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    color: #ddd;
+    font-size: 14px;
+}
+
+.top-left,
+.top-center,
+.top-right {
+    display: flex;
+    align-items: center;
+}
+
+.top-left {
+    gap: 10px;
+}
+
+.top-center {
+    flex: 1;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.top-right .icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    font-size: 14px;
+    color: #bbb;
+    background-color: transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: #444; 
+    color: #eee;  
+}
+.top-right .icon.search-icon {
+    padding-top: 1px; 
+}
+
+.top-right .icon.menu-icon {
+}
+
+.icon-btn {
+  background-color: #2c2c2c;  
+  border: 1px solid #3a3a3a; 
+  border-radius: 6px;          
+  width: 25px;
+  height: 28px;
+  padding: 4px;
+  margin-right: 8px;
+  cursor: pointer;
+  background-color: #444444; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+
+
+.icon-btn svg {
+  display: block;
+  stroke: white;             
+  stroke-width: 2;
+  fill: none;
+}
+
+.window-btn {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;  
+    display: inline-block;
+    margin: 5px;
+    position: relative;
+    cursor: pointer;
+    
+}
+
+/* Hover effect: circle becomes square and changes color */
+.window-btn:hover {
+    border-radius: 0px;        
+    background-color: #aaaaaa;  
+    transform: scale(1.5);      
+}
+
+/* Close button cross */
+.close::before {
+    content: '×';
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    pointer-events: none;
+}
+
+/* Minimize button dash */
+.min::before {
+    content: '–';
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    pointer-events: none;
+}
+
+/* Maximize button square */
+.max::before {
+    content: '☐';
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    pointer-events: none;
+}
+
+
+/* NANO HEADER */ 
+.nano-bar {
+    background: linear-gradient(to bottom, #e6e6e6, #d4d4d4);
+    border-bottom: 1px solid #b0b0b0;
+    padding: 6px 10px;
+    font-size: 14px;
+    color: #000;
+}
+
+.nano-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+/* EDITOR */
+.editor {
+    background: #300a24;
+    color: #eee;
+    padding: 20px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+pre {
+    margin: 0;
+    background: transparent !important;
+}
+
+/* FOOTER */
+
+.footer {
+    background: #300a24;
+    color: #eee;
+    font-size: 13px;
+    padding: 6px 6px 4px;
+    border-top: 1px solid #1e0014;
+}
+
+.footer-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.footer-row:last-child {
+    margin-bottom: 0;
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+}
+
+/* key box like nano (^G, ^O etc) */
+.key {
+    background: #eeeeee;
+    color: #000;
+    padding: 1px 4px;
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 12px;
+    min-width: 24px;
+    text-align: center;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="terminal">
+
+    <!-- TOP UBUNTU BAR -->
+    <div class="top-bar">
+        <div class="top-left">
+  <button class="icon-btn" aria-label="Show Applications">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="4" height="4" />
+      <rect x="10" y="3" width="4" height="4" />
+      <rect x="17" y="3" width="4" height="4" />
+      <rect x="3" y="10" width="4" height="4" />
+      <rect x="10" y="10" width="4" height="4" />
+      <rect x="17" y="10" width="4" height="4" />
+      <rect x="3" y="17" width="4" height="4" />
+      <rect x="10" y="17" width="4" height="4" />
+      <rect x="17" y="17" width="4" height="4" />
+    </svg>
+  </button>
+</div>
+        <div class="top-center">
+            student@cslab77-HP-ProDesk-400: ~/gfg
+        </div>
+
+        <div class="top-right">
+     <!-- Search Button -->
+  <button class="icon-btn" aria-label="Search">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="7"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+  </button>
+
+    <!-- Menu Button -->
+  <button class="icon-btn" aria-label="Menu">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="3" y1="7" x2="21" y2="7"></line>
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="17" x2="21" y2="17"></line>
+    </svg>
+  </button>
+    <div class="window-btn min"></div>
+    <div class="window-btn max"></div>
+    <div class="window-btn close"></div>
+</div>
+
+    </div>
+
+    <!-- NANO HEADER -->
+    <div class="nano-bar">
+        <div class="nano-content">
+            <div><strong>GNU nano 6.2</strong></div>
+            <div class="nano-center">file.txt*</div>
+            <div>Modified</div>
+        </div>
+    </div>
+
+    <!-- EDITOR BODY -->
+<div class="editor">
+<pre><code class="language-java">
+// 1. Account class with credit, debit, transferTo methods
+class Account {
+    private double balance;
+    private String accNumber;
+
+    public Account(String accNumber) {
+        this.accNumber = accNumber;
+        this.balance = 0;
+    }
+
+    public void credit(double amount) {
+        if(amount > 0) balance += amount;
+    }
+
+    public void debit(double amount) {
+        if(amount > 0 && balance >= amount) balance -= amount;
+        else System.out.println("Insufficient balance");
+    }
+
+    public void transferTo(Account other, double amount) {
+        if(amount > 0 && balance >= amount) {
+            this.debit(amount);
+            other.credit(amount);
+        } else System.out.println("Transfer failed");
+    }
+
+    public void display() {
+        System.out.printf("Account: %s, Balance: %.2f\n", accNumber, balance);
+    }
+}
+
+// Tester for Account
+class AccountTester {
+    public static void main(String[] args) {
+        Account a1 = new Account("ACC001");
+        Account a2 = new Account("ACC002");
+
+        a1.credit(500);
+        a1.debit(100);
+        a1.transferTo(a2, 200);
+
+        a1.display();
+        a2.display();
+    }
+}
+
+// 2. String concatenation with trimming longer string
+public class StringConcat {
+    public static String concatTrimmed(String s1, String s2) {
+        int len = Math.min(s1.length(), s2.length());
+        return s1.substring(s1.length()-len) + s2.substring(s2.length()-len);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(concatTrimmed("Hello", "Hi")); // loHi
+    }
+}
+
+// 3. Find 2nd largest element in int array
+public class SecondLargest {
+    public static int findSecondLargest(int[] arr) {
+        int max = Integer.MIN_VALUE, secondMax = Integer.MIN_VALUE;
+        for(int val : arr) {
+            if(val > max) {
+                secondMax = max;
+                max = val;
+            } else if(val > secondMax && val < max) {
+                secondMax = val;
+            }
+        }
+        return secondMax;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {12, 35, 1, 10, 34, 1};
+        System.out.println("Second Largest: " + findSecondLargest(arr)); // 34
+    }
+}
+
+// 4. Article class with loss percentage calculation
+class Article {
+    String name;
+    float costPrice, sellingPrice, lossPercent;
+
+    void calc_loss_per() {
+        lossPercent = ((costPrice - sellingPrice) / costPrice) * 100;
+    }
+
+    static Article find_high_loss(Article[] articles) {
+        Article maxLossArticle = articles[0];
+        for(Article a : articles) {
+            if(a.lossPercent > maxLossArticle.lossPercent) maxLossArticle = a;
+        }
+        return maxLossArticle;
+    }
+}
+
+// 5. Username Encryptor: Reverse and uppercase
+class UsernameEncryptor {
+    String username;
+
+    public UsernameEncryptor(String username) {
+        this.username = username;
+    }
+
+    public String encrypt() {
+        return new StringBuilder(username).reverse().toString().toUpperCase();
+    }
+
+    public void display() {
+        System.out.println("Original Username: " + username);
+        System.out.println("Encrypted Username: " + encrypt());
+    }
+}
+
+// 6. Image Rotation (transpose of 2D matrix)
+class ImageRotation {
+    int[][] pixels;
+
+    public ImageRotation(int[][] pixels) {
+        this.pixels = pixels;
+    }
+
+    public int[][] transpose() {
+        int rows = pixels.length;
+        int cols = pixels[0].length;
+        int[][] transposed = new int[cols][rows];
+        for(int i=0; i<rows; i++)
+            for(int j=0; j<cols; j++)
+                transposed[j][i] = pixels[i][j];
+        return transposed;
+    }
+
+    public void display(int[][] matrix) {
+        for(int[] row : matrix) {
+            for(int val : row) System.out.print(val + " ");
+            System.out.println();
+        }
+    }
+}
+
+// 7. ArrayList management of student names
+import java.util.*;
+class StudentList {
+    public static void main(String[] args) {
+        ArrayList<String> students = new ArrayList<>();
+        students.addAll(Arrays.asList("Alice", "Bob", "Charlie", "David", "Eva"));
+        System.out.println("Initial List: " + students);
+
+        students.remove(2);          // Remove 3rd student (Charlie)
+        students.add(1, "Zara");     // Add at 2nd position
+        students.set(students.size()-1, "Liam"); // Replace last student
+        System.out.println("Updated List: " + students);
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter student to find: ");
+        String name = sc.nextLine();
+        System.out.println(students.contains(name) ? "Found" : "Not Found");
+
+        System.out.println("Reverse List:");
+        for(int i=students.size()-1; i>=0; i--)
+            System.out.println(students.get(i));
+    }
+}
+
+// 8. Employee attendance with ArrayList and search/filter
+class Employee {
+    int empId, daysPresent;
+    String name;
+
+    Employee(int empId, String name, int daysPresent) {
+        this.empId = empId; this.name = name; this.daysPresent = daysPresent;
+    }
+
+    void display() {
+        System.out.printf("ID: %d, Name: %s, Days Present: %d\n", empId, name, daysPresent);
+    }
+}
+
+class EmployeeManager {
+    public static void main(String[] args) {
+        ArrayList<Employee> emps = new ArrayList<>();
+        emps.add(new Employee(101, "John", 22));
+        emps.add(new Employee(102, "Sara", 18));
+        emps.add(new Employee(103, "Mike", 25));
+        emps.add(new Employee(104, "Anna", 15));
+        emps.add(new Employee(105, "Tom", 21));
+
+        System.out.println("All Employees:");
+        emps.forEach(Employee::display);
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter empId to search: ");
+        int id = sc.nextInt();
+
+        boolean found = false;
+        for(Employee e : emps) {
+            if(e.empId == id) {
+                e.display();
+                found = true;
+                break;
+            }
+        }
+        if(!found) System.out.println("Employee not found");
+
+        System.out.println("Employees with attendance < 20:");
+        for(Employee e : emps) {
+            if(e.daysPresent < 20) e.display();
+        }
+    }
+}
+
+// 9. Inheritance and super keyword example
+class Staff {
+    String name;
+    int staffId;
+
+    void displayDetails() {
+        System.out.println("Name: " + name + ", StaffID: " + staffId);
+    }
+}
+
+class TeachingStaff extends Staff {
+    String subject;
+    int yearsExp;
+
+    void showTeachingInfo() {
+        super.displayDetails();
+        System.out.println("Subject: " + subject + ", Experience: " + yearsExp + " years");
+    }
+
+    public static void main(String[] args) {
+        TeachingStaff ts = new TeachingStaff();
+        ts.name = "Alice";
+        ts.staffId = 1234;
+        ts.subject = "Math";
+        ts.yearsExp = 10;
+        ts.showTeachingInfo();
+    }
+}
+
+// 10. Inheritance and method overriding example
+class BankAccount {
+    String accountHolder;
+    double balance;
+
+    void displayAccountInfo() {
+        System.out.printf("Account Holder: %s, Balance: %.2f\n", accountHolder, balance);
+    }
+}
+
+class SavingsAccount extends BankAccount {
+    double interestRate;
+
+    @Override
+    void displayAccountInfo() {
+        super.displayAccountInfo();
+        System.out.println("Interest Rate: " + interestRate + "%");
+    }
+
+    public static void main(String[] args) {
+        SavingsAccount sa = new SavingsAccount();
+        sa.accountHolder = "Bob";
+        sa.balance = 5000;
+        sa.interestRate = 5.0;
+        sa.displayAccountInfo();
+    }
+}
+
+// 11. Interfaces (Multiple Inheritance)
+interface WiFiEnabled {
+    void connectToWiFi(String networkName);
+}
+
+interface BluetoothEnabled {
+    void connectToBluetooth(String deviceName);
+}
+
+class SmartSpeaker implements WiFiEnabled, BluetoothEnabled {
+    public void connectToWiFi(String networkName) {
+        System.out.println("Connected to WiFi network: " + networkName);
+    }
+
+    public void connectToBluetooth(String deviceName) {
+        System.out.println("Connected to Bluetooth device: " + deviceName);
+    }
+
+    void playMusic(String songName) {
+        System.out.println("Playing song: " + songName);
+    }
+
+    public static void main(String[] args) {
+        SmartSpeaker sp = new SmartSpeaker();
+        sp.connectToWiFi("Home_Network");
+        sp.connectToBluetooth("John's Phone");
+        sp.playMusic("Shape of You");
+    }
+}
+
+// 12. Comparable interface to sort books by price
+import java.util.*;
+
+class Book implements Comparable<Book> {
+    String title, author;
+    double price;
+
+    Book(String t, String a, double p) {
+        title = t; author = a; price = p;
+    }
+
+    public int compareTo(Book b) {
+        return Double.compare(this.price, b.price);
+    }
+
+    public String toString() {
+        return "Title: " + title + " Author: " + author + " Price: " + price;
+    }
+
+    public static void main(String[] args) {
+        ArrayList<Book> books = new ArrayList<>();
+        books.add(new Book("Java Basics", "John Doe", 350.0));
+        books.add(new Book("Data Structures", "Smith", 450.0));
+        books.add(new Book("Advanced Java", "Jane", 550.0));
+
+        Collections.sort(books);
+        System.out.println("Books sorted by price:");
+        books.forEach(System.out::println);
+    }
+}
+
+// 13. Comparator interface example to sort Employees by name and age
+import java.util.*;
+
+class EmployeeC {
+    int id, age;
+    String name;
+
+    EmployeeC(int id, String name, int age) {
+        this.id = id; this.name = name; this.age = age;
+    }
+
+    public String toString() {
+        return id + " " + name + " " + age;
+    }
+}
+
+class NameComparator implements Comparator<EmployeeC> {
+    public int compare(EmployeeC e1, EmployeeC e2) {
+        return e1.name.compareTo(e2.name);
+    }
+}
+
+class AgeComparator implements Comparator<EmployeeC> {
+    public int compare(EmployeeC e1, EmployeeC e2) {
+        return Integer.compare(e1.age, e2.age);
+    }
+}
+
+class EmployeeSortDemo {
+    public static void main(String[] args) {
+        ArrayList<EmployeeC> list = new ArrayList<>();
+        list.add(new EmployeeC(1, "John", 25));
+        list.add(new EmployeeC(2, "Anna", 22));
+        list.add(new EmployeeC(3, "Mike", 28));
+
+        Collections.sort(list, new NameComparator());
+        System.out.println("Sorted by name:");
+        list.forEach(System.out::println);
+
+        Collections.sort(list, new AgeComparator());
+        System.out.println("Sorted by age:");
+        list.forEach(System.out::println);
+    }
+}
+
+// 14. Exception handling example with try-catch
+import java.util.Scanner;
+
+class SafeCalculator {
+    int divide(int a, int b) {
+        try {
+            return a / b;
+        } catch(ArithmeticException e) {
+            System.out.println("Error: Cannot divide by zero.");
+            return 0;  // default value
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Numerator: ");
+        int a = sc.nextInt();
+        System.out.print("Denominator: ");
+        int b = sc.nextInt();
+
+        SafeCalculator calc = new SafeCalculator();
+        int result = calc.divide(a, b);
+        if(b != 0) System.out.println("Result: " + result);
+    }
+}
+
+// 15. throw and throws example with FileReaderUtility
+import java.io.IOException;
+
+class FileReaderUtility {
+    void readFile(String fileName) throws IOException {
+        if(fileName.isEmpty()) throw new IllegalArgumentException("Filename cannot be empty.");
+        if(fileName.equals("missing.txt")) throw new IOException("File not found.");
+        System.out.println("Reading file: " + fileName);
+    }
+
+    public static void main(String[] args) {
+        String[] files = {"data.txt", "", "missing.txt"};
+        FileReaderUtility fru = new FileReaderUtility();
+
+        for(String file : files) {
+            try {
+                fru.readFile(file);
+            } catch(IllegalArgumentException | IOException e) {
+                System.out.println("Error: " + e.getMessage());
+            }
+        }
+    }
+}
+</code></pre>
+</div>
+
+
+    <!-- FOOTER -->
+<div class="footer">
+
+    <div class="footer-row">
+        <div class="footer-item"><span class="key">^G</span> Help</div>
+        <div class="footer-item"><span class="key">^O</span> Write Out</div>
+        <div class="footer-item"><span class="key">^R</span> Read File</div>
+        <div class="footer-item"><span class="key">^Y</span> Prev Pg</div>
+        <div class="footer-item"><span class="key">^K</span> Cut</div>
+        <div class="footer-item"><span class="key">^C</span> Cur Pos</div>
+    </div>
+
+    <div class="footer-row">
+        <div class="footer-item"><span class="key">^X</span> Exit</div>
+        <div class="footer-item"><span class="key">^J</span> Justify</div>
+        <div class="footer-item"><span class="key">^W</span> Where Is</div>
+        <div class="footer-item"><span class="key">^V</span> Next Pg</div>
+        <div class="footer-item"><span class="key">^U</span> Uncut</div>
+        <div class="footer-item"><span class="key">^T</span> To Spell</div>
+    </div>
+
+</div>
+
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+
+</body>
+</html>

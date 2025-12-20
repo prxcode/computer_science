@@ -1,3 +1,5 @@
+## Ch7 Components of Direction
+
 *MANAGMENT IS THE GAME OF WORDS* ~ Aqila Ma'am
 Supervision 
 Communication

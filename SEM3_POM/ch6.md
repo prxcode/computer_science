@@ -4,7 +4,7 @@
 14.4 Discuss how to become a better communicator
 
 
-## Communication
+## Ch6 Communication
 - **Communication:** the transfer and understanding of meaning
 - **Interpersonal communication:** communication between two or more people
 - **Organizational communication:** all the patterns, networks, and systems of communication within an organization

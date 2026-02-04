@@ -30,3 +30,12 @@ CREATE TABLE pet(
     
     -- Q5. Display the DOB of hamster.
     SELECT Birth FROM pet where Species = 'hamster';
+    
+    -- Q6. Add new column age
+    ALTER TABLE pet Add age INT;
+    
+    -- Q7. Drop column death
+    ALTER TABLE pet DROP COLUMN death;
+    
+	-- Q8. Update the birthdate to '1986-04-12' for cat species
+    UPDATE pet SET Birth = '1986-04-12' WHERE Species = 'cat';

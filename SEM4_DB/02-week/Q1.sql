@@ -36,5 +36,5 @@ INSERT INTO REGISTRATION VALUES
     (23456, 101, 'S1');
     SELECT * FROM REGISTRATION; 
     
-    
-SELECT * FROM STUDENT;
+-- For student with ID 12345, show all course_id and title of all courses registered for by the student.    
+SELECT C.course_id, C.title FROM COURSE C JOIN REGISTRATION R ON C.course_id = R.course_id WHERE R.student_id = 12345;

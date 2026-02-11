@@ -7,8 +7,8 @@ CREATE TABLE actors(
 INSERT INTO actors VALUES 
 (1, 'Charlie Chaplin'),
 (2, 'Kumar Khanna'),
-(3, 'Amit Shah'),
-(4, 'Ravi Kumar');
+(3, 'Amitabh Bacchan'),
+(4, 'Shah Rukh Khan');
 
 SELECT * FROM actors;
 
@@ -20,7 +20,7 @@ CREATE TABLE movies(
 INSERT INTO movies VALUES 
 (101, 'Modern Times'),
 (102, 'The Great Dictator'),
-(103, 'Comedy Nights'),
+(103, 'Sholay'),
 (104, 'Silent Era');
 
 SELECT * FROM movies;
@@ -38,18 +38,12 @@ INSERT INTO actor_role VALUES
 (101, 1, 'Singer'),      
 (102, 1, 'Dictator'),
 (103, 2, 'Comedian'),
-(103, 3, 'Guest'),
-(104, 1, 'Tramp');
+(103, 3, 'Side Actor'),
+(104, 1, 'Dancer');
 
 SELECT * FROM actor_role;
 
     
 -- List all movies in which Charlie Chaplin acted + number of roles in each movie
 SELECT m.title, COUNT(ar.rolename) AS number_of_roles FROM actors a JOIN actor_role ar ON a.aid = ar.aid JOIN movies m ON ar.mid = m.mid WHERE a.name = 'Charlie Chaplin' GROUP BY m.title;
-
-
-
-
-
-
 

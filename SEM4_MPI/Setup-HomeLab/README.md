@@ -1,4 +1,4 @@
-## How to setup this same TASM for Windows 11
+## How to setup this same TASM + DOSBox 16bit for Windows 11
 - Download and install DOSBox, double click and Next to install, https://sourceforge.net/projects/dosbox/
 - Create folder in C: -> `Dos`, so it be `C:/Dos`
 - Add all files from requirements file into Dos folder <img width="880" height="883" alt="image" src="https://github.com/user-attachments/assets/9aa0e662-e654-409c-8553-0ae408bbb6d9" />

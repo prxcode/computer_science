@@ -15,3 +15,14 @@ echo TASM Environment Ready!
 
 ```
 - Now open, DOSBox and start coding, with EDIT <filename>.asm, TASM <filename>.asm, TLINK <filename>.obj, TD <filename>.exe
+
+
+
+
+## For Mac 
+- Go to terminal type `brew install dosbox`
+- Open dosbox, you would see `Z:>`
+- now go to user dir, by opening Finder, type `CMD + SHIFT + H` and then create new folder here, `DOS` and inside it another folder `TASM`
+- In this `TASM` folder put all these 13 files `https://github.com/prxcode/computer_science/tree/main/SEM4_MPI/Setup-HomeLab/DOS`
+- Now Launch DOSBOX again and type `mount c ~/DOS`, then `c:`, now type `cd tasm`
+- Done! now you would be able to run EDIT <filename>.asm, TASM <filename>.asm, TLINK <filename.obj>, TD <filename.exe>

@@ -1,0 +1,19 @@
+.MODEL SMALL
+STACK 20
+.DATA
+EXTRN N:BYTE, RES:WORD ; External variables
+PUBLIC FACT ; Making public
+.CODE
+FACT PROC NEAR
+CMP AX, 1
+JE EXIT
+PUSH AX
+DEC AX
+CALL FACT ; Recursive call to get factorial
+POP AX
+MUL RES
+MOV RES, AX
+RET
+EXIT: RET
+ENDP
+END

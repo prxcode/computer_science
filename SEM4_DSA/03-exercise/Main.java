@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.*;
 
 class Student {
     String id;
@@ -16,10 +17,7 @@ class Student {
 
 class CircularQueue {
     Student[] queue;
-    int front;
-    int rear;
-    int size;
-    int capacity;
+    int front, rear, size, capacity;
 
     CircularQueue(int capacity) {
         this.capacity = capacity;
@@ -38,18 +36,14 @@ class CircularQueue {
     }
 
     void enqueue(Student s) {
-        if (isFull()) {
-            return;
-        }
+        if (isFull()) return;
         rear = (rear + 1) % capacity;
         queue[rear] = s;
         size++;
     }
 
     Student dequeue() {
-        if (isEmpty()) {
-            return null;
-        }
+        if (isEmpty()) return null;
         Student s = queue[front];
         front = (front + 1) % capacity;
         size--;
@@ -59,38 +53,58 @@ class CircularQueue {
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        int capacity = 100;
-        CircularQueue queue = new CircularQueue(capacity);
+
+        CircularQueue queue = new CircularQueue(100);
 
         BufferedReader br = new BufferedReader(new FileReader("studentin.dat"));
         String line;
 
+        // Read from file and enqueue
         while ((line = br.readLine()) != null) {
-            String[] parts = line.split(" ");
+            String[] parts = line.trim().split("\\s+"); // handles extra spaces
             if (parts.length >= 4) {
                 String id = parts[0];
                 String name = parts[1];
                 String dob = parts[2];
                 double cgpa = Double.parseDouble(parts[3]);
-                Student s = new Student(id, name, dob, cgpa);
-                queue.enqueue(s);
+
+                queue.enqueue(new Student(id, name, dob, cgpa));
             }
         }
         br.close();
 
-        BufferedWriter bw = new BufferedWriter(new FileWriter("studentout.dat"));
+        System.out.println("Records in FIFO order:\n");
 
+        ArrayList<String> lowCgpa = new ArrayList<>();
+
+        // Dequeue and display
         while (!queue.isEmpty()) {
             Student s = queue.dequeue();
-            String output = s.id + " " + s.name + " " + s.dob + " " + s.cgpa;
-            System.out.println(output);
-            bw.write(output);
-            bw.newLine();
+
+            System.out.println(s.id + " " + s.name + " " + s.dob + " " + s.cgpa);
+
             if (s.cgpa < 9.0) {
-                System.out.println("Name with CGPA < 9: " + s.name);
+                lowCgpa.add(s.name);
             }
         }
 
-        bw.close();
+        System.out.println("\nStudents with CGPA less than 9:\n");
+        System.out.println("NAME");
+
+        for (String name : lowCgpa) {
+            System.out.println(name);
+        }
     }
 }
+
+
+
+/*
+Studentin.dat file 
+
+2021A7PS001 AAAA 1/1/2000 7.50
+2021A7PS002 BBBB 2/1/2000 9.20
+2021A7PS003 CCCC 3/1/2000 9.60
+2021A7PS004 DDDD 4/1/2000 8.75
+2021A7PS005 EEEE 5/1/2000 9.25
+*/

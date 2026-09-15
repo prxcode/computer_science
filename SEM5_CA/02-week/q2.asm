@@ -1,4 +1,4 @@
-#sum of N integers in assembly (MIPS)
+#sum of N integer in assembly (MIPS) Example: If N = 52, then 5 + 2 = 7, so the program should print 7
 
 .data
 msg1: .asciiz "Enter an integer N: "

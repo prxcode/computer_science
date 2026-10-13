@@ -5,11 +5,11 @@ num1: .asciiz "Enter your first number(x): "
 num2: .asciiz "Enter your second number(y): "
 
 msg_sum: .asciiz "Sum (x+y): "
-msg_dif: .asciiz "/nDifference (x-y): "
-msg_mul: .asciiz "/nProduct (x*y): "
-msg_div: .asciiz "/nQuotient (x/y): "
+msg_dif: .asciiz "\nDifference (x-y): "
+msg_mul: .asciiz "\nProduct (x*y): "
+msg_div: .asciiz "\nQuotient (x/y): "
 
-newline: .asciiz "/n"
+newline: .asciiz "\n"
 
 .text
 .globl main
@@ -92,3 +92,18 @@ main:
 	li $v0, 10
 	syscall
 
+sum: 
+	add $v0, $a0, $a1
+	jr $ra
+
+difference:
+	sub $v0, $a0, $a1
+	jr $ra
+
+multiplication:
+	mul $v0, $a0, $a1
+	jr $ra
+
+division:
+	div $v0, $a0, $a1
+	jr $ra

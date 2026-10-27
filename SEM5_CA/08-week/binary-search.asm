@@ -4,6 +4,7 @@
     length: .word 9             # Number of elements
     target: .word 66            # Element to find (index should be 5)
     result: .word 0             # Stores the returned index
+    msg:    .asciiz "Index found at: " # Label text for clarity
 
 .text
 .globl main
@@ -20,6 +21,19 @@ main:
 
     # Save final result to memory
     sw $v0, result
+
+    # --- NEW CODE TO SHOW OUTPUT ---
+    # 1. Print the string label "Index found at: "
+    move $t0, $v0               # Temporarily save result ($v0) so it doesn't get overwritten
+    li $v0, 4                   # Syscall 4: Print String
+    la $a0, msg                 # Load address of msg
+    syscall
+
+    # 2. Print the actual result index integer
+    li $v0, 1                   # Syscall 1: Print Integer
+    move $a0, $t0               # Move the saved index into $a0 for printing
+    syscall
+    # -------------------------------
 
     # Exit program
     li $v0, 10

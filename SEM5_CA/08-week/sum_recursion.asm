@@ -1,7 +1,7 @@
-
 .data
     n:      .word 5         # Input value 'n' (e.g., 5 means 5+4+3+2+1)
     sum:    .word 0         # Variable to store final answer (Sum of 5 = 15)
+    msg:    .asciiz "The sum is: " # Label text for visual confirmation
 
 .text
 .globl main
@@ -15,6 +15,19 @@ main:
 
     # Save the final result into memory
     sw $v0, sum
+
+    # --- NEW CODE TO SHOW OUTPUT ---
+    # 1. Print the string label "The sum is: "
+    move $t0, $v0           # Temporarily save result ($v0) so it doesn't get overwritten
+    li $v0, 4               # Syscall 4: Print String
+    la $a0, msg             # Load address of msg
+    syscall
+
+    # 2. Print the actual result sum integer
+    li $v0, 1               # Syscall 1: Print Integer
+    move $a0, $t0           # Move the saved sum into $a0 for printing
+    syscall
+    # -------------------------------
 
     # Exit program (syscall 10)
     li $v0, 10

@@ -1,8 +1,8 @@
-
 .data
     base:   .word 3         # Input base 'a'
     exp:    .word 4         # Input exponent 'n'
     result: .word 0         # Variable to store final answer (3^4 = 81)
+    msg:    .asciiz "The result is: " # Label text for visual confirmation
 
 .text
 .globl main
@@ -18,11 +18,24 @@ main:
     # Save the result into memory
     sw $v0, result
 
+    # --- NEW CODE TO SHOW OUTPUT ---
+    # 1. Print the string label "The result is: "
+    move $t0, $v0           # Temporarily save result ($v0) so it doesn't get overwritten
+    li $v0, 4               # Syscall 4: Print String
+    la $a0, msg             # Load address of msg
+    syscall
+
+    # 2. Print the actual result exponent integer
+    li $v0, 1               # Syscall 1: Print Integer
+    move $a0, $t0           # Move the saved result into $a0 for printing
+    syscall
+    # -------------------------------
+
     # Exit program (syscall 10)
     li $v0, 10
     syscall
 
-# --- Recursive Power Function ---
+# Recursive Power Function
 # Inputs:  $a0 = base (a), $a1 = exponent (n)
 # Outputs: $v0 = result
 power:
